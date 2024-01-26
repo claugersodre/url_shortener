@@ -17,7 +17,7 @@ const UrlTable = () => {
                 </thead>
                 <tbody>
                     {
-                        URL.length > 0
+                        URL?.length > 0
                             ? URL.map((url, index) => (
                                 <tr key={index}>
                                     <td>{url.url}</td>

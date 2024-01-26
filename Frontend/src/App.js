@@ -110,7 +110,7 @@ function App() {
           <>
             <Buttons onClick={shortenedUrl} message={'Shorten Url'}>Add Url</Buttons>
             {'   '}
-            <input type="text" name="url" onChange={handleInput} />
+            <input type="text" name="urlShortner" onChange={handleInput} />
             <br /><br />
             <h3>Your shortened url is: {urlToShow}</h3>
           </>
