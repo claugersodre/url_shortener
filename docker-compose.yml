@@ -1,0 +1,55 @@
+version: '3.3'
+
+volumes:
+  postgres_data:
+      driver: local
+
+services:
+  postgres:
+      image: 'postgres:13.1-alpine'
+      container_name: 'url-db'
+      volumes:
+        - postgres_data:/var/lib/postgresql/data
+      environment:
+        POSTGRES_DB: url-db
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: url123
+      ports:
+        - 5430:5432
+      
+
+  app: 
+     image: 'app_frontend'
+     container_name: 'app_frontend'
+     build:
+       context: ./Frontend/url-frontend/
+       dockerfile: ./Dockerfile
+     depends_on:
+       - backend
+     ports:
+       - 3000:3000
+     networks:
+       - next_network
+
+  backend:
+      image: 'backend'
+      container_name: 'backend'
+      environment:
+        DATABASE: url-db
+        DATABASE_USER: postgres
+        DATABASE_HOST: 192.168.68.110 
+        DATABASE_PORT: 5430
+        DATABASE_PASSWORD: url123
+      depends_on:
+        - postgres
+      build:
+        context: ./Backend/
+        dockerfile: ./Dockerfile
+      ports:
+        - 3001:3001
+      networks:
+        - next_network
+
+networks:
+  next_network:
+    driver: bridge

@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "url123",
+    "database": "url-db",
+    "host": "localhost",
+    "dialect": "postgres",
+    "port":5430
+  },
+  "test": {
+    "username": "postgres",
+    "password": "url123",
+    "database": "url-db",
+    "host": "localhost",
+    "dialect": "postgres",
+    "port":5430
+  },
+  "production": {
+    "username": "postgres",
+    "password": "url123",
+    "database": "url-db",
+    "host": "localhost",
+    "dialect": "postgres",
+    "port":5430
+  }
+}
