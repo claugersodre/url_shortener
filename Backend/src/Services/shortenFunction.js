@@ -11,7 +11,6 @@ function convertToBase62(decimalNumber) {
         result.unshift(remainder)
         decimalNumber = Math.floor(decimalNumber / base)
     }
-    console.log("to base 62", result)
     return result
 }
 

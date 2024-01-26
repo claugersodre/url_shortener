@@ -10,6 +10,7 @@ const CreateUrl = async (url) => {
                 count: 1
             })
             const { id } = await findeUrl(url)
+            console.log(id)
             await Url.update({ short: ShortenFucntion(id) }, { where: { url: url } })
             return await findeUrl(url)
         }
