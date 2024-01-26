@@ -16,8 +16,6 @@ services:
         POSTGRES_PASSWORD: url123
       ports:
         - 5430:5432
-      
-
   app: 
      image: 'app_frontend'
      container_name: 'app_frontend'
@@ -37,7 +35,7 @@ services:
       environment:
         DATABASE: url-db
         DATABASE_USER: postgres
-        DATABASE_HOST: 172.26.22.248
+        DATABASE_HOST: 0.0.0.0
         DATABASE_PORT: 5430
         DATABASE_PASSWORD: url123
       depends_on:
