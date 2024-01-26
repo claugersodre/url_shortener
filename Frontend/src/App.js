@@ -88,7 +88,7 @@ function App() {
           setUrlToShow(data?.url?.url)
         })
         .then(() => getAllUrl())
-        .catch(()=>setUrlToShow('Not found'))
+        .catch(() => setUrlToShow('Not found'))
     }
   }
   return (
@@ -112,7 +112,8 @@ function App() {
             {'   '}
             <input type="text" name="urlShortner" onChange={handleInput} />
             <br /><br />
-            <h3>Your shortened url is: {urlToShow}</h3>
+            <h3>Your shortened url is:</h3>
+            <a href={urlToShow} >{urlToShow}</a>
           </>
         )}
         {showShortenenContent && (
@@ -121,7 +122,8 @@ function App() {
             {'   '}
             <input type="text" name="url" onChange={handleInputShowUrl} placeholder={urlToShow} />
             <br /><br />
-            <h3>Your url is: {urlToShow}</h3>
+            <h3>Your url is:</h3>
+            <a href={urlToShow} >{urlToShow}</a>
           </>
         )}
         <UrlTable />
