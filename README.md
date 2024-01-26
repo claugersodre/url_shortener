@@ -55,7 +55,10 @@ and to seed the database
 
 - To view the correct URL, open the frontend at http://localhost:3000 and click the "View your URL" button, a "Show your URL" button will open, enter the URL and click the button
   
-
+##  shortening algorithm
+```
+https://stackoverflow.com/questions/742013/how-do-i-create-a-url-shortener
+```
 
 ## Critique
 
